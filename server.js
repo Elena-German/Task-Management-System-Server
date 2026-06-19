@@ -1,35 +1,38 @@
 const express = require("express")
 const cors = require("cors");
-
 const app = express()
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://elena-german.github.io/Task-Management-System/",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json()); 
 
+app.get('/api/hello', (req, res) => {
+    res.json({ message: "Express на Vercel" });
+});
+
 let todos = [
-  { id: 1, name: 'Первая задачаss', info: 'описание задачи', isImportant: false, isCompleted: true },
+  { id: 1, name: 'Первая задача', info: 'описание задачи', isImportant: false, isCompleted: true },
   {
     id: 2,
-    name: 'Вторая задачаss',
+    name: 'Вторая задача',
     info: 'длинное описание задачи ххххххххххххххххххххххх хххххххххххххххххххххх ххххххххххххххххххххххх',
     isImportant: false,
     isCompleted: false,
   },
   {
     id: 3,
-    name: 'Третья задачаss',
+    name: 'Третья задача',
     info: 'описание задачи',
     isImportant: true,
     isCompleted: true,
   },
   {
     id: 4,
-    name: 'Четвертая задача длинное название хххххххххххххxx xxxxxxxxxxxxxxxxxxx ss',
+    name: 'Четвертая задача длинное название хххххххххххххxx xxxxxxxxxxxxxxxxxxx',
     info: 'описание задачи',
     isImportant: false,
     isCompleted: false,
@@ -175,5 +178,4 @@ app.delete('/todos/:id', (req, res) => {
  
 })*/
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
+module.exports = app;
