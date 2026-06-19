@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express()
 
 app.use(cors({
-  origin: "https://elena-german.github.io/Task-Management-System/",
+  origin: "https://elena-german.github.io",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
