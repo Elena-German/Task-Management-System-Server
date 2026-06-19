@@ -1,0 +1,13 @@
+{
+  "name": "todo-app-backend",
+  "version": "1.1.0",
+  "description": "Backend for Todo App",
+  "main": "server.js",
+  "scripts": {    
+    "start": "node server.js"    
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
